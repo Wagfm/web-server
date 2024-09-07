@@ -16,6 +16,7 @@ services:
             start_period: 10s
         volumes:
             - ./src/postgresql.conf:/docker-entrypoint-initdb.d/postgresql.conf
+            - ./postgres_data:/var/lib/postgresql/data
         network_mode: host
         deploy:
             resources:
