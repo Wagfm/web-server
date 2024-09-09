@@ -41,4 +41,4 @@ services:
                     memory: 0.25G
 secrets:
     db_password:
-        file: ./db_password.txt
+        file: ./secrets/db_password.txt
