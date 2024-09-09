@@ -15,7 +15,7 @@ services:
             retries: 20
             start_period: 10s
         volumes:
-            - ./src/postgresql.conf:/docker-entrypoint-initdb.d/postgresql.conf
+            - ./postgresql.conf:/docker-entrypoint-initdb.d/postgresql.conf
             - ./postgres_data:/var/lib/postgresql/data
         network_mode: host
         deploy:
@@ -30,7 +30,7 @@ services:
         container_name: web-server-nginx
         image: nginx:1.27-alpine
         volumes:
-            - ./src/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx.conf:/etc/nginx/nginx.conf
             - ./certs/cert.pem:/etc/nginx/ssl/cert.pem
             - ./certs/key.pem:/etc/nginx/ssl/key.pem
         network_mode: host
